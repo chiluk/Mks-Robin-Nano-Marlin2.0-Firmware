@@ -24,7 +24,7 @@
 #define CONFIG_EXAMPLES_DIR "Two Trees/Sapphire Plus/Sapphire Plus V2"
 
 #define SAPPHIRE_PLUS_MKS_UI
-#define SAPPHIRE_PLUS_BLTOUCH
+// #define SAPPHIRE_PLUS_BLTOUCH
 //#define SAPPHIRE_PLUS_TMC_UART
 
 /**
@@ -610,9 +610,9 @@
     #define DEFAULT_Kd_LIST { 49.50, 49.50 }
   #else
     // Sapphire S/Pro/Plus
-    #define DEFAULT_Kp 12.02
-    #define DEFAULT_Ki  0.75
-    #define DEFAULT_Kd 49.50
+    #define DEFAULT_Kp 13.89
+    #define DEFAULT_Ki  0.94
+    #define DEFAULT_Kd 51.24
   #endif
 #endif // PIDTEMP
 
@@ -951,13 +951,16 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 410 }
+// #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 412 }
+// #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.3, 80.3, 800, 412 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
+// Original #define DEFAULT_MAX_FEEDRATE          { 150, 150, 4, 70, 70 }
 #define DEFAULT_MAX_FEEDRATE          { 300, 300, 10, 70 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
@@ -971,7 +974,8 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+// OG #define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 200, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -986,9 +990,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  2000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          4000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  800    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   4000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -2786,6 +2790,8 @@
   #define TFT_COLOR_UI
 #else
   #define TFT_LVGL_UI
+  // #define MKS_WIFI_MODULE
+  #define TOUCH_SCREEN
 #endif
 
 /**
@@ -2796,7 +2802,7 @@
  *   TFT_ROTATE_270, TFT_ROTATE_270_MIRROR_X, TFT_ROTATE_270_MIRROR_Y,
  *   TFT_MIRROR_X, TFT_MIRROR_Y, TFT_NO_ROTATION
  */
-//#define TFT_ROTATION TFT_NO_ROTATION
+#define TFT_ROTATION TFT_ROTATE_180
 
 //=============================================================================
 //============================  Other Controllers  ============================
