@@ -703,20 +703,12 @@
   //#define INVERT_Z4_VS_Z_DIR
 
   #if DISABLED(SAPPHIRE_PLUS_BLTOUCH)
-    #define Z_MULTI_ENDSTOPS
+  //  #define Z_MULTI_ENDSTOPS
   #endif
-  #if ENABLED(Z_MULTI_ENDSTOPS)
-    #define Z2_USE_ENDSTOP          _ZMAX_
-    #define Z2_ENDSTOP_ADJUSTMENT   0
-    #if NUM_Z_STEPPER_DRIVERS >= 3
-      #define Z3_USE_ENDSTOP        _YMAX_
-      #define Z3_ENDSTOP_ADJUSTMENT 0
-    #endif
-    #if NUM_Z_STEPPER_DRIVERS >= 4
-      #define Z4_USE_ENDSTOP        _ZMAX_
-      #define Z4_ENDSTOP_ADJUSTMENT 0
-    #endif
-  #endif
+  // #if ENABLED(Z_MULTI_ENDSTOPS)
+  //  #define Z2_USE_ENDSTOP          _ZMIN_
+  // #define Z2_ENDSTOP_ADJUSTMENT   0
+  // #endif
 #endif
 
 // Drive the E axis with two synchronized steppers

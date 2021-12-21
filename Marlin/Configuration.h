@@ -892,17 +892,17 @@
 //#define E7_DRIVER_TYPE A4988
 
 #if ENABLED(SAPPHIRE_PLUS_TMC_UART)
-#define X_SERIAL_TX_PIN                   PA9   // Wifi TX
-#define X_SERIAL_RX_PIN                   PA9
-#define Y_SERIAL_TX_PIN                   PA10  // Wifi RX
-#define Y_SERIAL_RX_PIN                   PA10
-#define Z_SERIAL_TX_PIN                   PC13  // WIFI IO0
-#define Z_SERIAL_RX_PIN                   PC13
-#define E0_SERIAL_TX_PIN                  PE5   // MAX31855 CS
-#define E0_SERIAL_RX_PIN                  PE5
-#define E1_SERIAL_TX_PIN                  PC7   // WIFI IO1
-#define E1_SERIAL_RX_PIN                  PC7
-#define TMC_BAUD_RATE                     19200 // Reduced to improve software serial reliability
+  #define X_SERIAL_TX_PIN                   PA9   // Wifi TX
+  #define X_SERIAL_RX_PIN                   PA9
+  #define Y_SERIAL_TX_PIN                   PA10  // Wifi RX
+  #define Y_SERIAL_RX_PIN                   PA10
+  #define Z_SERIAL_TX_PIN                   PC13  // WIFI IO0
+  #define Z_SERIAL_RX_PIN                   PC13
+  #define E0_SERIAL_TX_PIN                  PE5   // MAX31855 CS
+  #define E0_SERIAL_RX_PIN                  PE5
+  #define E1_SERIAL_TX_PIN                  PC7   // WIFI IO1
+  #define E1_SERIAL_RX_PIN                  PC7
+  #define TMC_BAUD_RATE                     19200 // Reduced to improve software serial reliability
 #endif
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
@@ -1360,7 +1360,7 @@
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true
 #define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 //#define INVERT_I_DIR false
 //#define INVERT_J_DIR false
 //#define INVERT_K_DIR false
@@ -2765,7 +2765,7 @@
   #define TFT_DRIVER AUTO
 
   // Interface. Enable one of the following options:
-  #define TFT_INTERFACE_FSMC
+  //#define TFT_INTERFACE_FSMC
   //#define TFT_INTERFACE_SPI
 
   // TFT Resolution. Enable one of the following options:
@@ -2790,7 +2790,6 @@
   #define TFT_COLOR_UI
 #else
   #define TFT_LVGL_UI
-  // #define MKS_WIFI_MODULE
   #define TOUCH_SCREEN
 #endif
 
@@ -2803,6 +2802,7 @@
  *   TFT_MIRROR_X, TFT_MIRROR_Y, TFT_NO_ROTATION
  */
 #define TFT_ROTATION TFT_ROTATE_180
+//#define TFT_ROTATION TFT_NO_ROTATION
 
 //=============================================================================
 //============================  Other Controllers  ============================
